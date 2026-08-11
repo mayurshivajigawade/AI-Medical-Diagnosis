@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Medical Diagnosis Assistant</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <header>
+
+            <h1>🩺 AI Medical Diagnosis Assistant</h1>
+
+            <p>
+                Chest X-ray Pneumonia Detection using Deep Learning
+            </p>
+
+        </header>
+
+        <!-- Statistics -->
+
+        <div class="stats">
+
+            <div class="card">
+                <h2>🤖</h2>
+                <h3>AI Model</h3>
+                <p>CNN</p>
+            </div>
+
+            <div class="card">
+                <h2>📂</h2>
+                <h3>Input</h3>
+                <p>Chest X-ray</p>
+            </div>
+
+            <div class="card">
+                <h2>🎯</h2>
+                <h3>Classes</h3>
+                <p>2</p>
+            </div>
+
+            <div class="card">
+                <h2>⚡</h2>
+                <h3>Prediction</h3>
+                <p>Instant</p>
+            </div>
+
+        </div>
+
+        <!-- Upload Form -->
+
+        <div class="upload-card">
+
+            <h2>Upload Chest X-ray</h2>
+
+            <form
+                action="/predict"
+                method="POST"
+                enctype="multipart/form-data">
+
+                <input
+                    type="file"
+                    id="image"
+                    name="image"
+                    accept=".jpg,.jpeg,.png"
+                    required
+                    onchange="previewImage(event)">
+
+                <br><br>
+
+                <img
+                    id="preview"
+                    class="preview"
+                    src="#"
+                    alt="Image Preview">
+
+                <br><br>
+
+                <button type="submit">
+
+                    Predict Disease
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Navigation -->
+
+        <div class="menu">
+
+            <a href="/history">
+
+                <button>
+
+                    Prediction History
+
+                </button>
+
+            </a>
+
+            
+
+        </div>
+
+        <!-- Footer -->
+
+        <footer>
+
+            <p>
+
+                AI Medical Diagnosis Assistant
+
+                <br>
+
+                Developed using Flask + TensorFlow
+
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/preview.js') }}"></script>
+
+</body>
+
+</html>

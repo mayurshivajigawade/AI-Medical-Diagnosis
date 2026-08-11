@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction History</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <h1>📜 Prediction History</h1>
+
+        <p>All AI Predictions Stored in Database</p>
+
+    </header>
+
+    {% if records %}
+
+    <table class="history-table">
+
+        <thead>
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>Image</th>
+
+            <th>Prediction</th>
+
+            <th>Confidence</th>
+
+            <th>Date & Time</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for record in records %}
+
+        <tr>
+
+            <td>{{ record[0] }}</td>
+
+            <td>
+
+                <img
+                src="{{ url_for('static', filename='uploads/' + record[1]) }}"
+                class="history-image">
+
+            </td>
+
+            <td>
+
+                {% if record[2] == "NORMAL" %}
+
+                <span class="normal-text">
+
+                    ✅ NORMAL
+
+                </span>
+
+                {% else %}
+
+                <span class="pneumonia-text">
+
+                    ⚠️ PNEUMONIA
+
+                </span>
+
+                {% endif %}
+
+            </td>
+
+            <td>
+
+                {{ "%.2f"|format(record[3]) }}%
+
+            </td>
+
+            <td>
+
+                {{ record[4] }}
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    {% else %}
+
+    <div class="empty-history">
+
+        <h2>
+
+            No Prediction History Available
+
+        </h2>
+
+        <p>
+
+            Upload an X-ray image to start building your history.
+
+        </p>
+
+    </div>
+
+    {% endif %}
+
+    <div class="buttons">
+
+        <a href="/">
+
+            <button>
+
+                🏠 Home
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

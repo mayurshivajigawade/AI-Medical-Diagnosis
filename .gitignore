@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual Environment
+venv/
+.env
+
+# Uploads
+static/uploads/
+
+# Dataset
+dataset/
+
+# Database
+database/*.db
+
+# TensorFlow Logs
+logs/
+
+# VS Code
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+#model
+models/pneumonia_cnn.keras
+models/.h5
+models/*.keras

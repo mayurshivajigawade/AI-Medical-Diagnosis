@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <h1>🩺 AI Medical Diagnosis Assistant</h1>
+
+        <p>Prediction Result</p>
+
+    </header>
+
+    <div class="result-container">
+
+        <div class="image-section">
+
+            <h2>Uploaded Chest X-ray</h2>
+
+            <img
+                src="{{ url_for('static', filename='uploads/' + image) }}"
+                class="result-image">
+
+        </div>
+
+        <div class="prediction-section">
+
+            <h2>AI Diagnosis</h2>
+
+            {% if prediction == "NORMAL" %}
+
+            <div class="prediction-card normal">
+
+                <h1>✅ NORMAL</h1>
+
+            </div>
+
+            {% else %}
+
+            <div class="prediction-card pneumonia">
+
+                <h1>⚠️ PNEUMONIA</h1>
+
+            </div>
+
+            {% endif %}
+
+            <div class="confidence-card">
+
+                <h3>Confidence</h3>
+
+                <h2>{{ confidence }}%</h2>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>Medical Note</h3>
+
+                {% if prediction == "NORMAL" %}
+
+                <p>
+
+                    The uploaded X-ray was classified as
+                    <b>Normal</b> by the AI model.
+
+                </p>
+
+                {% else %}
+
+                <p>
+
+                    The uploaded X-ray was classified as
+                    <b>Pneumonia</b> by the AI model.
+
+                    This result should be reviewed by a qualified healthcare professional.
+
+                </p>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <a href="/">
+
+            <button>
+
+                🔄 Analyze Another Image
+
+            </button>
+
+        </a>
+
+        <a href="/history">
+
+            <button>
+
+                📜 Prediction History
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

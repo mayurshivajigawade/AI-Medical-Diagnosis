@@ -28,6 +28,23 @@ An AI-powered web application that detects **Pneumonia** from Chest X-ray images
 
 ---
 
+## 📸 Screenshots
+
+> 
+
+### 1. Dashboard Overview
+![Dashboard](static/uploads/screenshot-1786637259112.png)
+
+### 2. Normal
+![Normal Detection](static/uploads/screenshot-1786637206121.png)
+
+### 3. Pneumonia
+![Pneumonia Detection](static/uploads/screenshot-1786637292848.png)
+
+### 4. History
+![Prediction History](static/uploads/screenshot-1786637326659.png)
+
+
 ## Project Structure
 
 ```
@@ -53,7 +70,7 @@ AI-Medical-Diagnosis/
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/AI-Medical-Diagnosis.git
+git clone https://github.com/mayurshivajigawade/AI-Medical-Diagnosis.git
 ```
 
 Go to project folder
@@ -109,6 +126,10 @@ Result
 ```
 
 ---
+
+
+
+
 
 ## Future Improvements
 

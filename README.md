@@ -33,16 +33,16 @@ An AI-powered web application that detects **Pneumonia** from Chest X-ray images
 > 
 
 ### 1. Dashboard Overview
-![Dashboard](static/uploads/screenshot-1786637259112.png)
+![Dashboard](screenshots/screenshot-1786637259112.png)
 
 ### 2. Normal
-![Normal Detection](static/uploads/screenshot-1786637206121.png)
+![Normal Detection](screenshots/screenshot-1786637206121.png)
 
 ### 3. Pneumonia
-![Pneumonia Detection](static/uploads/screenshot-1786637292848.png)
+![Pneumonia Detection](screenshots/screenshot-1786637292848.png)
 
 ### 4. History
-![Prediction History](static/uploads/screenshot-1786637326659.png)
+![Prediction History](screenshots/screenshot-1786637326659.png)
 
 
 ## Project Structure
